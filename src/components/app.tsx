@@ -6,20 +6,20 @@ import Profile from '../routes/profile';
 import NotFoundPage from '../routes/notfound';
 import Header from './header';
 
-import "tailwindcss/dist/tailwind.min.css";
+import 'tailwindcss/dist/tailwind.min.css';
 
 const App = (): h.JSX.Element => {
-    return (
-        <div id="preact_root">
-            <Header />
-            <Router>
-                <Route path="/" component={Home} />
-                <Route path="/profile/" component={Profile} user="me" />
-                <Route path="/profile/:user" component={Profile} />
-                <NotFoundPage default />
-            </Router>
-        </div>
-    );
+  return (
+    <div id="preact_root">
+      <Header />
+      <Router>
+        <Route path="/" component={Home} />
+        <Route path="/profile/" component={Profile} user="me" />
+        <Route path="/profile/:user" component={Profile} />
+        <NotFoundPage default />
+      </Router>
+    </div>
+  );
 };
 
 export default App;
