@@ -17,6 +17,7 @@ export default {
 	},
 	args: {
 		children: 'Button label',
+		className: '',
 	},
 } as Meta;
 
