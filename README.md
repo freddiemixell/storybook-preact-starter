@@ -26,3 +26,4 @@ For detailed explanation on how things work, checkout the [CLI Readme](https://g
 * Each story is located in the directory with the component that it's a story for.
 * Other stories will be found in a src/stories directory.
 * Important note: When looking at tutorials make sure you convert react to preact. IE - `import { Story, Meta } from '@storybook/preact';`: Notice how it says preact instead of react.
+* [Official Storybook Typescript Example](https://github.com/storybookjs/storybook/blob/next/docs/snippets/react/page-story.ts.mdx)(Uses React be careful!)
