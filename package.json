@@ -3,6 +3,10 @@
   "name": "storybook-test",
   "version": "0.0.0",
   "license": "MIT",
+  "author": {
+    "name": "Frederick Mixell",
+    "email": "fmixell@gmail.com"
+  },
   "scripts": {
     "build": "preact build",
     "serve": "sirv build --port 8080 --cors --single",
