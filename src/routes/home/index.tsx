@@ -1,8 +1,8 @@
-import { FunctionalComponent, h } from 'preact';
+import { h } from 'preact';
 import style from './style.css';
 import Button from '../../components/button';
 
-const Home: FunctionalComponent = () => {
+const Home = (): h.JSX.Element => {
     return (
         <div class={style.home}>
             <h1>Home</h1>

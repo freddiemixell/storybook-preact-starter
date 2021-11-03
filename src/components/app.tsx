@@ -1,4 +1,4 @@
-import { FunctionalComponent, h } from 'preact';
+import { h } from 'preact';
 import { Route, Router } from 'preact-router';
 
 import Home from '../routes/home';
@@ -8,7 +8,7 @@ import Header from './header';
 
 import "tailwindcss/dist/tailwind.min.css";
 
-const App: FunctionalComponent = () => {
+const App = (): h.JSX.Element => {
     return (
         <div id="preact_root">
             <Header />
