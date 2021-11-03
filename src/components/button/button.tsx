@@ -1,4 +1,6 @@
 import {ComponentChildren, h, FunctionalComponent} from 'preact';
+import {useCallback} from 'preact/hooks';
+import { useClasses } from '../../hooks/useclasses';
 
 type ColorList = 'transparent'|'current'|'black'|'white'|'blue'|'green';
 
@@ -16,41 +18,29 @@ export interface ButtonProps {
 	bold?: boolean;
 }
 
-const Button: FunctionalComponent<ButtonProps> = ({children, onClick = () => {}, className = '', disabled = false, textColor = 'white', rounded = true, bold = true, backgroundColor, backgroundOpacity, backgroundHoverColor, backgroundFocusColor }) => {
-	let classes = () => {
-		let classList = [
-			'button',
-			'py-2',
-			'px-4',
-			className
-		];
-
-		// Add background color
-		if (backgroundColor && backgroundColor !== 'transparent' && backgroundColor !== 'white' && backgroundColor !== 'black' && backgroundColor !== 'current' ) {
-			classList.push(`bg-${backgroundColor}-500`);
-		} else {
-			classList.push(`bg-${backgroundColor}`);
-		}
-
-		// Text Color.
-		if (textColor && textColor !== 'transparent' && textColor !== 'white' && textColor !== 'black' && textColor !== 'current') {
-			classList.push(`text-${textColor}-500`);
-		} else {
-			classList.push(`text-${textColor}`)
-		}
-
-		// Is Rounded.
-		if (rounded) {
-			classList.push('rounded');
-		}
-
-		// Is Bold.
-		if (bold) {
-			classList.push('font-bold');
-		}
-
-		return classList.join(' ');
-	}
+const Button: FunctionalComponent<ButtonProps> = ({
+	children,
+	onClick = () => {},
+	className = '',
+	disabled = false,
+	textColor = 'white',
+	rounded = true,
+	bold = true,
+	backgroundColor,
+	backgroundOpacity,
+	backgroundHoverColor, 
+	backgroundFocusColor
+}) => {
+	let classes = useClasses({
+		backgroundColor,
+		backgroundHoverColor,
+		backgroundFocusColor,
+		bold,
+		rounded,
+		textColor,
+		className,
+		backgroundOpacity
+	});
 	return (
 		<button
 			className={classes()}
