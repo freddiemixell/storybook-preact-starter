@@ -1,5 +1,5 @@
 # storybook-test
-This is an example of how to set up React Storybook for Preact and Typescript. I've used Tailwind CSS for styling purposes and showcasing how to use Storybook to build your design system.
+This is an example of how to set up React Storybook for Preact and Typescript. I've used Tailwind CSS for styling purposes and showcasing how to use Storybook to build your design system. However, I didn't add Tailwinds through PostCSS because the purpose of this was to learn how Storybook works with Preact and Typescript.
 
 ## CLI Commands
 *   `npm install`: Installs dependencies
