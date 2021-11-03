@@ -1,5 +1,4 @@
-import {ComponentChildren, h, FunctionalComponent} from 'preact';
-import {useCallback} from 'preact/hooks';
+import {ComponentChildren, h} from 'preact';
 import { useClasses } from '../../hooks/useclasses';
 
 type ColorList = 'transparent'|'current'|'black'|'white'|'blue'|'green';
@@ -18,7 +17,7 @@ export interface ButtonProps {
 	bold?: boolean;
 }
 
-const Button: FunctionalComponent<ButtonProps> = ({
+export const Button = ({
 	children,
 	onClick = () => {},
 	className = '',
@@ -30,7 +29,7 @@ const Button: FunctionalComponent<ButtonProps> = ({
 	backgroundOpacity,
 	backgroundHoverColor, 
 	backgroundFocusColor
-}) => {
+}: ButtonProps) => {
 	let classes = useClasses({
 		backgroundColor,
 		backgroundHoverColor,
@@ -50,6 +49,4 @@ const Button: FunctionalComponent<ButtonProps> = ({
 			{children}
 		</button>
 	);
-}
-
-export default Button;
+};

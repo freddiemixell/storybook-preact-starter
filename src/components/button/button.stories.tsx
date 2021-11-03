@@ -1,8 +1,8 @@
 import { h } from 'preact';
-import Button, {ButtonProps} from './button';
+import Button from './index';
+import { ButtonProps } from './button';
 import { Story, Meta } from '@storybook/preact';
 import "tailwindcss/dist/tailwind.min.css";
-import "./style.css";
 
 export default {
 	title: 'Components/Button',
